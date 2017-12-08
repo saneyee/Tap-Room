@@ -1,0 +1,20 @@
+{
+  "name": "tap-room",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "https://github.com/saneyee/angular2-to-do",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  },
+  "authors": [
+    "saneyee sarkar <saneyeesarkar@gmail.com>"
+  ]
+}
