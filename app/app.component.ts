@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   <div class="container">
   <h1>Tap Room</h1>
   <h2>Menu</h2>
-   <h4 *ngFor="let currentKeg of kegs">{{currentKeg.name}} | <span *ngIf="currentKeg.price < 5" style="color:green;">$ {{currentKeg.price}}</span> <span *ngIf="currentKeg.price >= 5" style="color:brown;">$ {{currentKeg.price}}</span> | Alcohol :{{currentKeg.alcoholContent}}% | Pints :{{currentKeg.pints}}
+   <h4 *ngFor="let currentKeg of kegs">{{currentKeg.name}} <span *ngIf="currentKeg.alcoholContent >= 5" style="font-style:bold;color:red;">*Strong*</span> | <span *ngIf="currentKeg.price < 5" style="color:green;">$ {{currentKeg.price}}</span> <span *ngIf="currentKeg.price >= 5" style="color:blue;">$ {{currentKeg.price}}</span> | Alcohol :{{currentKeg.alcoholContent}}% | Pints :{{currentKeg.pints}}
    <button class="bg-info" (click)="showKeg(currentKeg)">Show</button>
    <button class="bg-info" (click)="editKeg(currentKeg)">Edit</button>
    <button class="bg-danger" (click)="sellKeg(currentKeg)">Sell</button><span *ngIf="currentKeg.pints < 120" style="color:red;"> Please Refill</span></h4>
