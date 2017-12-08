@@ -26,6 +26,7 @@ import { Component } from '@angular/core';
        </form>
 
      <div *ngIf="detailsKeg">
+     <hr>
      <h3>Name :{{detailsKeg.name}}</h3>
      <h3>Brand :{{detailsKeg.brand}}</h3>
      <h3>Price :{{detailsKeg.price}}</h3>
@@ -34,6 +35,7 @@ import { Component } from '@angular/core';
      </div>
 
     <div *ngIf="selectedKeg">
+    <hr>
     <h3>Edit Keg</h3>
     <br>
     <label>Enter Name:</label>
