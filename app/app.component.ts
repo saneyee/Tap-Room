@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   <div class="container">
   <h1>Tap Room</h1>
   <h2>Menu</h2>
-   <h4 *ngFor="let currentKeg of kegs">{{currentKeg.name}} | <span></span>$ {{currentKeg.price}} | Alcohol :{{currentKeg.alcoholContent}}% | Pints :{{currentKeg.pints}}
+   <h4 *ngFor="let currentKeg of kegs">{{currentKeg.name}} | <span *ngIf="currentKeg.price < 5" style="color:green;">$ {{currentKeg.price}}</span> <span *ngIf="currentKeg.price >= 5" style="color:brown;">$ {{currentKeg.price}}</span> | Alcohol :{{currentKeg.alcoholContent}}% | Pints :{{currentKeg.pints}}
    <button class="bg-info" (click)="showKeg(currentKeg)">Show</button>
    <button class="bg-info" (click)="editKeg(currentKeg)">Edit</button>
    <button class="bg-danger" (click)="sellKeg(currentKeg)">Sell</button><span *ngIf="currentKeg.pints < 120" style="color:red;"> Please Refill</span></h4>
@@ -66,14 +66,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
   kegs: Keg[] = [
     new Keg('Missouri  Light Lager','Bud Light',7.99,3),
-    new Keg('Colorado  Light Lager','Coors ligh',10.99, 4.2),
-    new Keg('Missouri  American Style Lager','Budweise',17.99,5.1),
+    new Keg('Colorado  Light Lager','Coors ligh',4.99, 4.2),
+    new Keg('Missouri  American Style Lager','Budweise',5.99,5.1),
     new Keg('Hawaii  American All Malt Lager','Kona Longboard Island Lager',9.99,6.5),
     new Keg('California  American Style Lager','Rainier Lager',9.99,7.3),
     new Keg('Massachusetts  Fruit Cider','Angry Orchard Crisp Apple Cider',4.99,4),
     new Keg('Alaska  Altbier','Alaskan Amber',9.99,8.5),
     new Keg('Washington  American Amber/Red Ale','Mac and Jack African Amber',6.99,5.9),
-    new Keg('Washington  American Pale Ale','Georgetown Mannys Pale Ale',6.99,4.7),
+    new Keg('Washington  American Pale Ale','Georgetown Mannys Pale Ale',3.99,4.7),
     new Keg('Washington and New Hampshire  American India Pale Ale','Redhook Long Hammer IPA',7.99,6.8)
   ];
   selectedKeg = null;
