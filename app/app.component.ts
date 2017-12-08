@@ -6,10 +6,10 @@ import { Component } from '@angular/core';
   <div class="container">
   <h1>Tap Room</h1>
   <h2>Menu</h2>
-   <h4 *ngFor="let currentKeg of kegs">Name :{{currentKeg.name}}
+   <h4 *ngFor="let currentKeg of kegs">{{currentKeg.name}} | <span></span>$ {{currentKeg.price}} | Alcohol :{{currentKeg.alcoholContent}}% | Pints :{{currentKeg.pints}}
    <button class="bg-info" (click)="showKeg(currentKeg)">Show</button>
    <button class="bg-info" (click)="editKeg(currentKeg)">Edit</button>
-   <button class="bg-danger" (click)="sellKeg(currentKeg)">Sell</button></h4>
+   <button class="bg-danger" (click)="sellKeg(currentKeg)">Sell</button><span *ngIf="currentKeg.pints < 120" style="color:red;"> Please Refill</span></h4>
      <br>
      <form>
          <label>Name:</label>
@@ -29,8 +29,8 @@ import { Component } from '@angular/core';
      <hr>
      <h3>Name :{{detailsKeg.name}}</h3>
      <h3>Brand :{{detailsKeg.brand}}</h3>
-     <h3>Price :{{detailsKeg.price}}</h3>
-     <h3>AlcoholContent :{{detailsKeg.alcoholContent}}</h3>
+     <h3>Price : $ {{detailsKeg.price}}</h3>
+     <h3>AlcoholContent :{{detailsKeg.alcoholContent}}%</h3>
      <h3>Pints :{{detailsKeg.pints}}</h3>
      </div>
 
